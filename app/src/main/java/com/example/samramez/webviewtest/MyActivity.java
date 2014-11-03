@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 
 public class MyActivity extends Activity {
 
-    WebView myWebView;
+    private WebView myWebView;
+    private WebSettings webSettings;
 
 
     @Override
@@ -19,6 +21,11 @@ public class MyActivity extends Activity {
 
         myWebView = (WebView) findViewById(R.id.webview);
         myWebView.loadUrl("http://www.hapoojoon.com");
+
+        //Enabling user to zoom in the page.
+        webSettings = myWebView.getSettings();
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setSupportZoom(true);
     }
 
 
