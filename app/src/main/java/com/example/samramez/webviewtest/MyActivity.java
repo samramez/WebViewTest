@@ -20,12 +20,18 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
 
         myWebView = (WebView) findViewById(R.id.webview);
-        myWebView.loadUrl("http://www.hapoojoon.com");
+        myWebView.loadUrl("http://hapoojoon.com/subMap/");
 
         //Enabling user to zoom in the page.
         webSettings = myWebView.getSettings();
         webSettings.setBuiltInZoomControls(true);
         webSettings.setSupportZoom(true);
+
+        //enabling JavaScript in the app
+        webSettings.setJavaScriptEnabled(true);
+
+
+
     }
 
 
